@@ -1,6 +1,9 @@
 <template>
   <div id="app">
-    <TreeBrowser :node="root" />
+    <TreeBrowser  
+    :node="root" 
+    @onClick='nodeWasClicked'
+    />
   </div>
 </template>
 
@@ -32,6 +35,12 @@ export default {
           }
         ]
       }
+    }
+  },
+  methods: {
+    nodeWasClicked(node) {
+      console.log('1234')
+      alert(node.name)
     }
   },
   components: {
